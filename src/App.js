@@ -24,6 +24,7 @@ const data = [
   },
   { id: 6, personaje: "Seto Kaiba", anime: "Yu-Gi-Oh!" },
 ];
+
 class App extends React.Component {
   state = {
     data: data,
@@ -61,7 +62,7 @@ class App extends React.Component {
     var contador = 0;
     var arreglo = this.state.data;
     arreglo.map((registro) => {
-      if (dato.id == registro.id) {
+      if (dato.id === registro.id) {
         arreglo[contador].personaje = dato.personaje;
         arreglo[contador].anime = dato.anime;
       }
@@ -74,11 +75,11 @@ class App extends React.Component {
     var opcion = window.confirm(
       "Estás Seguro que deseas Eliminar el elemento " + dato.id
     );
-    if (opcion == true) {
+    if (opcion === true) {
       var contador = 0;
       var arreglo = this.state.data;
       arreglo.map((registro) => {
-        if (dato.id == registro.id) {
+        if (dato.id === registro.id) {
           arreglo.splice(contador, 1);
         }
         if (dato.id <= contador + 1) {
@@ -118,10 +119,10 @@ class App extends React.Component {
           <Table>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Personaje</th>
-                <th>Anime</th>
-                <th>Acción</th>
+                <th>userId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>completed</th>
               </tr>
             </thead>
 
